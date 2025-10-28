@@ -478,7 +478,7 @@ section {
 .youtube-text h3 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #24ccfb;
+    color: #d4af37;
 }
 
 .youtube-text p {
@@ -562,7 +562,7 @@ section {
 
 .video-views i {
     font-size: 0.8rem;
-    color: #24ccfb;
+    color: #d4af37;
 }
 
 .subscribe-box {
@@ -571,13 +571,13 @@ section {
     backdrop-filter: blur(10px);
     padding: 3rem 2rem;
     border-radius: 12px;
-    border: 1px solid rgba(36, 204, 251, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .subscribe-box h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #24ccfb;
+    color: #d4af37;
 }
 
 .subscribe-box p {
@@ -593,14 +593,14 @@ section {
 }
 
 .youtube-section .btn-primary {
-    background-color: #24ccfb;
+    background-color: #d4af37;
     color: #fff;
-    border-color: #24ccfb;
+    border-color: #d4af37;
 }
 
 .youtube-section .btn-primary:hover {
-    background-color: #1db8dc;
-    border-color: #1db8dc;
+    background-color: #b8941f;
+    border-color: #b8941f;
 }
 
 .project-card {

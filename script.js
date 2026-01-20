@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation links
+﻿// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -129,57 +129,64 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         // Get form data
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
         const subject = formData.get('subject');
         const message = formData.get('message');
-        
+
         // Simple validation
         if (!name || !email || !subject || !message) {
             alert('Por favor, completa todos los campos.');
             return;
         }
-        
+
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             alert('Por favor, ingresa un email válido.');
             return;
         }
-        
-        // Simulate form submission
+
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        
-        submitBtn.textContent = 'Enviando...';
-        submitBtn.disabled = true;
-        
-        // Simulate API call
-        setTimeout(() => {
-            alert('¡Mensaje enviado con éxito! Te contactaré pronto.');
-            this.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
-    });
-}
 
-// Typing animation for hero title
-function typeWriter(element, text, speed = 100) {
+        submitBtn.textContent = 'Abriendo correo...';
+        submitBtn.disabled = true;
+
+        const mailBody = `Nombre: ${name}\nEmail: ${email}\n\n${message}`;
+        const mailto = `mailto:jmanzano3010@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+        window.location.href = mailto;
+
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        this.reset();
+    });
+}\n// Typing animation for hero title
+function typeWriterHeading(element, prefixText, highlightText, speed = 100) {
     let i = 0;
-    element.innerHTML = '';
-    
+    element.textContent = '';
+    const textNode = document.createTextNode('');
+    element.appendChild(textNode);
+
     function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
+        if (i < prefixText.length) {
+            textNode.textContent += prefixText.charAt(i);
             i++;
             setTimeout(type, speed);
+            return;
+        }
+
+        if (highlightText) {
+            const highlight = document.createElement('span');
+            highlight.className = 'highlight';
+            highlight.textContent = highlightText;
+            element.appendChild(highlight);
         }
     }
-    
+
     type();
 }
 
@@ -187,12 +194,12 @@ function typeWriter(element, text, speed = 100) {
 window.addEventListener('load', () => {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        typeWriter(heroTitle, originalText, 50);
+        const highlight = heroTitle.querySelector('.highlight');
+        const highlightText = highlight ? highlight.textContent : '';
+        const prefixText = highlight ? heroTitle.textContent.replace(highlightText, '') : heroTitle.textContent;
+        typeWriterHeading(heroTitle, prefixText, highlightText, 50);
     }
-});
-
-// Parallax effect for hero section
+});\n// Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
@@ -320,3 +327,6 @@ loadingStyle.textContent = `
     }
 `;
 document.head.appendChild(loadingStyle);
+
+
+

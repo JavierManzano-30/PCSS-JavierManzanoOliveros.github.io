@@ -743,27 +743,40 @@ section:not(:first-of-type)::after {
 
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: var(--space-md);
   margin-top: var(--space-xl);
 }
 
 .stat {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  border-radius: var(--border-radius);
-  padding: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(calc(var(--glass-blur) * 0.8));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 0.8));
+  border: 1px solid rgba(77, 163, 255, 0.18);
+  border-radius: 18px;
+  padding: 20px 18px;
   text-align: center;
-  box-shadow: var(--glass-shadow);
+  box-shadow: 0 14px 30px rgba(8, 16, 28, 0.25);
   transition: all var(--transition-base);
+}
+
+.stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  opacity: 0.7;
 }
 
 .stat:hover {
   transform: translateY(-4px);
-  border-color: rgba(77, 163, 255, 0.4);
-  background: var(--glass-bg-hover);
+  border-color: rgba(77, 163, 255, 0.35);
+  background: rgba(77, 163, 255, 0.08);
 }
 
 .stat h3 {

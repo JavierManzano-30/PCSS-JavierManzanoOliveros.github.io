@@ -221,7 +221,8 @@ if (contactForm) {
         submitBtn.disabled = false;
         this.reset();
     });
-}\n// Typing animation for hero title
+}
+// Typing animation for hero title
 function typeWriterHeading(element, prefixText, highlightText, speed = 100) {
     let i = 0;
     element.textContent = '';
@@ -256,7 +257,8 @@ window.addEventListener('load', () => {
         const prefixText = highlight ? heroTitle.textContent.replace(highlightText, '') : heroTitle.textContent;
         typeWriterHeading(heroTitle, prefixText, highlightText, 50);
     }
-});\n// Parallax effect for hero section
+});
+// Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');

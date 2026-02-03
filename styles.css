@@ -15,6 +15,7 @@
   --nav-bg-scrolled: rgba(14, 15, 18, 0.85);
   --nav-border: rgba(255, 255, 255, 0.18);
   --nav-border-scrolled: rgba(77, 163, 255, 0.2);
+  --footer-bg: rgba(14, 15, 18, 0.8);
   
   /* Glass Effect */
   --glass-bg: rgba(255, 255, 255, 0.08);
@@ -104,6 +105,7 @@ body[data-theme="light"] {
   --nav-bg-scrolled: rgba(244, 246, 251, 0.98);
   --nav-border: rgba(15, 23, 42, 0.12);
   --nav-border-scrolled: rgba(37, 99, 235, 0.25);
+  --footer-bg: rgba(244, 246, 251, 0.95);
 }
 
 /* Images - Sharp & Optimized */
@@ -1326,7 +1328,7 @@ body.no-scroll {
    ======================================== */
 
 .footer {
-  background: rgba(14, 15, 18, 0.8);
+  background: var(--footer-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border-top: 1px solid var(--glass-border);

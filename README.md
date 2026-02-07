@@ -3,9 +3,9 @@
 Currículum online de perfil programador, desarrollado en HTML, CSS y JavaScript y preparado para publicación en GitHub Pages.
 
 ## Enlace del proyecto
-- Repositorio: `[JManzanoO/JManzanoO.github.io](https://github.com/JavierManzano-30/JavierManzano-30.github.io)`
+- Repositorio: `https://github.com/JavierManzano-30/JavierManzano-30.github.io`
 - Página principal: `index.html`
-- Publicación esperada: `[https://jmanzanoo.github.io/](https://javiermanzano-30.github.io/)`
+- Publicación esperada: `https://javiermanzano-30.github.io/`
 
 ## Qué incluye
 - `index.html`: CV principal online.

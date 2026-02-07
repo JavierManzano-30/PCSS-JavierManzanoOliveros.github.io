@@ -237,15 +237,29 @@ window.addEventListener('load', () => {
         typeWriterHeading(heroTitle, prefixText, highlightText, 50);
     }
 });
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
+// Parallax effect for hero section (desktop only)
+function updateHeroParallax() {
     const hero = document.querySelector('.hero');
-    if (hero) {
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translateY(${rate}px)`;
+    if (!hero) {
+        return;
     }
-});
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isDesktop = window.innerWidth >= 992;
+
+    if (!isDesktop || reduceMotion) {
+        hero.style.transform = 'none';
+        return;
+    }
+
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    hero.style.transform = `translateY(${rate}px)`;
+}
+
+window.addEventListener('scroll', updateHeroParallax);
+window.addEventListener('resize', updateHeroParallax);
+updateHeroParallax();
 
 // Add hover effects to project cards
 document.querySelectorAll('.project-card').forEach(card => {

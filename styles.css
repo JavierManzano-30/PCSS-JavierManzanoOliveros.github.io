@@ -105,6 +105,7 @@ body {
   animation: lavaLampFlow 16s ease-in-out infinite alternate;
   background-attachment: fixed;
   min-height: 100vh;
+  min-width: 320px;
   overflow-x: hidden;
 }
 
@@ -1821,6 +1822,37 @@ body.no-scroll {
     padding: var(--space-sm);
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --space-xl: 36px;
+    --space-lg: 24px;
+    --space-md: 18px;
+    --font-size-h1: clamp(32px, 9vw, 40px);
+    --font-size-h2: clamp(24px, 7vw, 30px);
+    --font-size-h3: clamp(20px, 6vw, 24px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + 8px);
+  }
+
+  .hero-container {
+    gap: var(--space-lg);
+    padding-top: var(--space-lg);
+  }
+
+  .section-title {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .project-links .btn {
+    min-width: 0;
+    width: 100%;
   }
 }
 

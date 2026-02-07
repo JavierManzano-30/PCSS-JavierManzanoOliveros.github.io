@@ -3,16 +3,15 @@
 Currículum online de perfil programador, desarrollado en HTML, CSS y JavaScript y preparado para publicación en GitHub Pages.
 
 ## Enlace del proyecto
-- Repositorio: `JManzanoO/JManzanoO.github.io`
+- Repositorio: `[JManzanoO/JManzanoO.github.io](https://github.com/JavierManzano-30/JavierManzano-30.github.io)`
 - Página principal: `index.html`
-- Publicación esperada: `https://jmanzanoo.github.io/`
+- Publicación esperada: `[https://jmanzanoo.github.io/](https://javiermanzano-30.github.io/)`
 
-## Qué incluye la entrega
+## Qué incluye
 - `index.html`: CV principal online.
 - `styles.css`: estilos globales (tema oscuro/claro, responsive, animaciones y componentes).
 - `script.js`: interacciones de navegación, tema y comportamiento dinámico.
 - `minijuego.html`: easter egg interactivo (Parkour Challenge).
-- `demo-alquiler.html` y `demo-onepiece.html`: demos complementarias.
 
 ## Comprobación frente al enunciado
 - `Curriculum online`: cumplido (`index.html` como entrada principal).
@@ -25,11 +24,6 @@ Currículum online de perfil programador, desarrollado en HTML, CSS y JavaScript
 - `Información distribuida por apartados/pestañas`: cumplido mediante secciones navegables desde navbar y mapa lateral.
 - `CV actualizado`: estructura preparada para ir actualizando datos, proyectos y tecnologías.
 - `Entrega en GitHub con nombre PCSS-NombreApellido1Apellido2`: nombre adaptado en este README a `PCSS-JavierManzanoOliveros`.
-
-## Recomendaciones para entrega final
-1. Revisar el contenido textual final (experiencia, stack y contacto) antes de exponer.
-2. Comprobar en móvil real y desktop antes de la presentación.
-3. Validar que en GitHub Pages carga correctamente `index.html` como página principal.
 
 ## Ejecución local
 No requiere build.

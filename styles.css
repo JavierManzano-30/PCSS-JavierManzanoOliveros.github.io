@@ -11,6 +11,12 @@
   --text-secondary: #A7B0BD;
   --accent-blue: #4DA3FF;
   --accent-cyan: #70FFE1;
+  --lava-a: rgba(77, 163, 255, 0.34);
+  --lava-b: rgba(112, 255, 225, 0.28);
+  --lava-c: rgba(77, 163, 255, 0.24);
+  --lava-d: rgba(112, 255, 225, 0.22);
+  --lava-e: rgba(77, 163, 255, 0.2);
+  --lava-f: rgba(112, 255, 225, 0.18);
   --nav-bg: rgba(14, 15, 18, 0.7);
   --nav-bg-scrolled: rgba(14, 15, 18, 0.85);
   --nav-border: rgba(255, 255, 255, 0.18);
@@ -85,10 +91,36 @@ body {
   font-size: var(--font-size-body);
   line-height: 1.6;
   color: var(--text-primary);
-  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  background:
+    radial-gradient(30rem 26rem at 10% 20%, var(--lava-a) 0%, transparent 56%),
+    radial-gradient(32rem 27rem at 88% 16%, var(--lava-b) 0%, transparent 56%),
+    radial-gradient(28rem 24rem at 24% 86%, var(--lava-c) 0%, transparent 54%),
+    radial-gradient(34rem 28rem at 74% 80%, var(--lava-d) 0%, transparent 58%),
+    radial-gradient(24rem 20rem at 8% 72%, var(--lava-e) 0%, transparent 52%),
+    radial-gradient(26rem 22rem at 92% 64%, var(--lava-f) 0%, transparent 54%),
+    radial-gradient(22rem 20rem at 52% 38%, var(--lava-a) 0%, transparent 50%),
+    linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  background-size: 170% 170%, 180% 180%, 165% 165%, 175% 175%, 160% 160%, 168% 168%, 185% 185%, 100% 100%;
+  background-position: 6% 12%, 94% 12%, 18% 88%, 80% 74%, 8% 72%, 92% 64%, 52% 40%, 50% 50%;
+  animation: lavaLampFlow 16s ease-in-out infinite alternate;
   background-attachment: fixed;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+@keyframes lavaLampFlow {
+  0% {
+    background-position: 6% 12%, 94% 12%, 18% 88%, 80% 74%, 8% 72%, 92% 64%, 52% 40%, 50% 50%;
+    background-size: 170% 170%, 180% 180%, 165% 165%, 175% 175%, 160% 160%, 168% 168%, 185% 185%, 100% 100%;
+  }
+  50% {
+    background-position: 30% 26%, 68% 28%, 40% 68%, 56% 54%, 22% 58%, 78% 46%, 38% 56%, 50% 50%;
+    background-size: 205% 205%, 195% 195%, 190% 190%, 200% 200%, 185% 185%, 190% 190%, 215% 215%, 100% 100%;
+  }
+  100% {
+    background-position: 44% 16%, 56% 50%, 58% 62%, 34% 86%, 36% 44%, 70% 30%, 68% 30%, 50% 50%;
+    background-size: 185% 185%, 210% 210%, 180% 180%, 205% 205%, 178% 178%, 186% 186%, 200% 200%, 100% 100%;
+  }
 }
 
 body[data-theme="light"] {
@@ -98,6 +130,12 @@ body[data-theme="light"] {
   --text-secondary: #4a5568;
   --accent-blue: #2563eb;
   --accent-cyan: #0ea5a4;
+  --lava-a: rgba(37, 99, 235, 0.3);
+  --lava-b: rgba(14, 165, 164, 0.32);
+  --lava-c: rgba(59, 130, 246, 0.3);
+  --lava-d: rgba(56, 189, 248, 0.28);
+  --lava-e: rgba(37, 99, 235, 0.26);
+  --lava-f: rgba(20, 184, 166, 0.24);
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-bg-hover: rgba(255, 255, 255, 0.85);
   --glass-border: rgba(15, 23, 42, 0.12);
